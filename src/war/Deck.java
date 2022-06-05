@@ -6,14 +6,18 @@ public class Deck {
     List<Card> cards = new ArrayList<Card>();
     
     public Deck() {
-        
+        for(int suit = 0; suit < 4; suit++) {
+            for(int rank = 2; rank < 15; rank++) {
+                cards.add(new Card(suit, rank));
+            }
+        }
     }
     
-    public void Shuffle() {
-        
+    public void shuffle() {
+        Collections.shuffle(cards);
     }
     
     public Card draw() {
-        return null;
+        return cards.remove(0);
     }
 }
